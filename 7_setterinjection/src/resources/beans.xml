@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www1.springframework.org/schema/util/spring-util.xsd"> <!-- bean definitions here -->
+	
+	<bean id="springCourse" class="com.example.springioc.SpringCourse" />
+	<bean id="javaCourse" class="com.example.springioc.JavaCourse" />	
+	 
+	
+	<bean name="student1" class="com.example.springioc.Student">
+		<property name="id" value="123" />
+		<property name="name" value="srinivasu" />
+		<property name="course" ref="springCourse"></property>
+	</bean>
+
+	<bean name="student2" class="com.example.springioc.Student" p:id="234"
+	p:name="giri" p:course-ref="javaCourse">
+	
+	</bean>
+</beans>
